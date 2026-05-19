@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 export default function Burger() {
+  const [selectedMeat, setSelectedMeat] = useState("vita");
   return (
     <div className=" flex justify-between ps-10 pe-10 m-10 bg-blue-900">
       <div className=" w-70 h-400 ">
@@ -12,13 +15,36 @@ export default function Burger() {
           </select>
           <p>2.CARNE</p>
           <select
+           value={selectedMeat}
+           onChange={ (e)=> setSelectedMeat(e.target.value)}
             title="CARNE"
             className="w-40 border-2 border-solid border-yellow-500 text-sm/9 "
           >
-            <option>PARJOALA VITA (45lei)</option>
-            <option> FILE DE PUI PANE (32lei)</option>
-            <option>FILE DE PUI GRILL (32lei)</option>
+            <option value ='vita'>PARJOALA VITA (45lei)</option>
+            <option value ='pui-pane'> FILE DE PUI PANE (32lei)</option>
+            <option value ='pui-grill'>FILE DE PUI GRILL (32lei)</option>
           </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           <p>3.Sos chifla jos</p>
           <select
@@ -96,8 +122,15 @@ export default function Burger() {
           </div>
 
           <div>
-            <span>parjoala vita</span>
-            <img className="w-45" src="/parjoala-pui.svg" alt="" />
+
+            {selectedMeat === 'vita' && <span>parjoala de vita</span>}
+            {selectedMeat ==='pui-pane' && <span> parjoala de pui pane </span>}
+           { selectedMeat === 'pui-grill' && <span> parjoala de pui grill </span>}
+            {selectedMeat === 'vita' && <img className="w-45" src="/pirjoala-vita.svg" alt="" />}
+            {selectedMeat === 'pui-pane' && <img className="w-45" src="parjoala-pui.svg" alt="" />}
+            {selectedMeat === 'pui-grill' && <img className="w-45" src="/parjoala-pui.svg" alt="" />}
+
+
           </div>
           <div>
             <span>chifla</span>

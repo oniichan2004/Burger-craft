@@ -1,9 +1,12 @@
-import Burger from "./burger";
+import Burger from "./components/burger";
 
 function App() {
   return (
-      <div><Burger /></div>
-    )
+    <div>
+      <Burger/>
+      {/* <Burger /> */}
+    </div>
+  );
 }
 
 export default App;

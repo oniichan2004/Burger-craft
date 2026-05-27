@@ -1,5 +1,5 @@
 import type { IngredientProps } from "../types/burger-types";
-
+// import AddButton from "./add-button";
 
 export default function IngredientSelect({name, options, onChange}: IngredientProps) {
     return (
@@ -8,9 +8,13 @@ export default function IngredientSelect({name, options, onChange}: IngredientPr
 <select title = {name} onChange = {(e)=>onChange(e.target.value)}  className="w-50 border border-gray-300 rounded">
     {options.map(option => (
         <option key = { option.value} value={option.value}>{option.name}</option>
+
+       
+     
     ))}
 
 </select>
+
 
 
         </div>
